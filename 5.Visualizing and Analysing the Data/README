@@ -53,5 +53,5 @@ Standard deviation - Minimum value - Maximum value - Quartiles - Median
 Example:
 
 ``` python
-app.describe()
+df.describe()
 ```
