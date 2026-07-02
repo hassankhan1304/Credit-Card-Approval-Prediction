@@ -1,1 +1,123 @@
+from IPython.display import HTML
 
+HTML('''
+<h1>Credit Card Approval Prediction</h1>
+
+<form action="/predict" method="POST">
+    <div class="row">
+        <div class="input-box">
+            <label>GENDER</label>
+            <select name="gender">
+                <option>FEMALE</option>
+                <option>MALE</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>OWN CAR OR NOT</label>
+            <select name="car">
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-box">
+            <label>OWN REALSTATE</label>
+            <select name="realestate">
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>TOTAL ANUAL INCOME</label>
+            <input type="number" name="income">
+        </div>
+
+        <div class="input-box">
+            <label>TYPE OF INCOME</label>
+            <select name="income_type">
+                <option>Working</option>
+                <option>Commercial Associate</option>
+                <option>Pensioner</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-box">
+            <label>EDUCATION</label>
+            <select name="education">
+                <option>Higher education</option>
+                <option>Secondary</option>
+                <option>Graduate</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>FAMILY STATUS</label>
+            <select name="family_status">
+                <option>Married</option>
+                <option>Single</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <label>TYPE OF HOUSING</label>
+            <select name="housing">
+                <option>House / apartment</option>
+                <option>Rented</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-box">
+            <label>DAYS BIRTH</label>
+            <input type="number" step="any" name="days_birth">
+        </div>
+
+        <div class="input-box">
+            <label>DAYS EMPLOYED</label>
+            <input type="number" step="any" name="days_employed">
+        </div>
+
+        <div class="input-box">
+            <label>FAMILY MEMBERS</label>
+            <input type="number" name="family_members">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-box">
+            <label>EMI PAID OFF</label>
+            <input type="number" name="emi_paid">
+        </div>
+
+        <div class="input-box">
+            <label>EMI OF PASTDUES</label>
+            <input type="number" name="emi_pastdue">
+        </div>
+
+        <div class="input-box">
+            <label>NUMBER OF LOANS</label>
+            <input type="number" name="loans">
+        </div>
+    </div>
+
+    <button type="submit">Predict</button>
+
+</form>'''
+)
+import pandas as pd
+
+# Assuming X_train's columns are known from earlier steps: age, income, credit_score, employment_years
+feature_names = ['age', 'income', 'credit_score', 'employment_years']
+
+# Convert the features list to a DataFrame with column names
+features_df = pd.DataFrame([features], columns=feature_names)
+
+# Now, make the prediction using the DataFrame with feature names
+prediction = model.predict(features_df)
