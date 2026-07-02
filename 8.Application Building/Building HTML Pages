@@ -1,1 +1,29 @@
+from IPython.display import HTML
 
+HTML('''
+<input type="text" placeholder="Enter applicant name">
+</div>
+
+<div class="input-box">
+    <label>Income Type</label>
+    <select>
+        <option>Working</option>
+        <option>Commercial Associate</option>
+        <option>Pensioner</option>
+    </select>
+</div>
+
+<div class="input-box">
+    <label>Education Type</label>
+    <select>
+        <option>Graduate</option>
+        <option>Post Graduate</option>
+        <option>High School</option>
+    </select>
+</div>
+
+<div class="input-box">
+    <label>Annual Income</label>
+    <input type="number" placeholder="Enter income">
+</div>
+''')
